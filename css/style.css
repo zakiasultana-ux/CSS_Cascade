@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header p {
+    font-family: cursive;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+article {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+    font-family: "Montez", cursive;
+    text-align: justify;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: #ff7e5f;
+    transition: all 0.3s ease-in-out;
+}
+
+li:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+li:nth-child(even) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+li input[type="checkbox"]:checked + label {
+    text-decoration:line-through;
+  }
+
+li input[type="checkbox"]:checked + label::after {
+    content: " 🎊";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 19px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInScale 0.3s ease-in-out forwards;
+}
+
+.todo li {
+    border-left: 5px solid #ffcc00;
+}
+
+.inprogress li {
+    border-left: 5px solid #00ccff;
+}
+
+.done li {
+    border-left: 5px solid #33cc33;
+    color: #ddd;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
